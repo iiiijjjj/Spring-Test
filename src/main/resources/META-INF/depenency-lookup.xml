@@ -18,9 +18,9 @@
         <property name="addres" value="shuzhou"/>
     </bean>-->
 
-    <!--<bean id="query" class="org.springframework.beans.factory.serviceloader.ServiceLoaderFactoryBean">
-
-    </bean>-->
+    <bean id="query" class="org.springframework.beans.factory.serviceloader.ServiceLoaderFactoryBean">
+        <property name="serviceType" value="com.yu.test.service.IQuery"/>
+    </bean>
 
 
     <bean id="objectFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
