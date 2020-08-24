@@ -3,7 +3,6 @@ package com.yu.test;
 import com.yu.test.annotation.Supper;
 import com.yu.test.domain.User;
 import com.yu.test.repository.UserRepository;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -11,7 +10,7 @@ import org.springframework.core.env.Environment;
 
 public class DependecyLookup {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext beanFactory = new ClassPathXmlApplicationContext("classpath:META-INFO/depenency-lookup.xml");
+        ClassPathXmlApplicationContext beanFactory = new ClassPathXmlApplicationContext("classpath:META-INF/depenency-lookup.xml");
         //实时查找
         User user = beanFactory.getBean("user",User.class);
         System.out.println(user);

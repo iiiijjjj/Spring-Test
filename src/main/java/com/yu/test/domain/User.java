@@ -1,6 +1,10 @@
 package com.yu.test.domain;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
+
     private Long id;
     private String name;
 
@@ -18,6 +22,13 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public static User createUser(){
+        User user =new User();
+        user.setId(1L);
+        user.setName("xxxx");
+        return user;
     }
 
     @Override

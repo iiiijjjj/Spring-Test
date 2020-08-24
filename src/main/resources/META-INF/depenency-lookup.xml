@@ -6,14 +6,22 @@
         http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="user" class="com.yu.test.domain.User">
-        <property name="id" value="1"/>
-        <property name="name" value="yuly"/>
-    </bean>
+    <bean id="user" class="com.yu.test.domain.User" factory-bean="userFactory"/>
+    <bean id="user1" class="com.yu.test.domain.User" factory-bean="userCreator" factory-method="createUser" />
 
-    <bean id="supperUser" class="com.yu.test.domain.SupperUser"  parent="user" primary="true">
+    <bean id="userCreator" class="com.yu.test.domain.UserCreator"/>
+    <bean id="userFactory" class="com.yu.test.domain.UserCreateFactory" />
+        <!--<property name="id" value="1"/>
+        <property name="name" value="yuly"/>-->
+
+    <!--<bean id="supperUser" class="com.yu.test.domain.SupperUser"  parent="user" primary="true">
         <property name="addres" value="shuzhou"/>
-    </bean>
+    </bean>-->
+
+    <!--<bean id="query" class="org.springframework.beans.factory.serviceloader.ServiceLoaderFactoryBean">
+
+    </bean>-->
+
 
     <bean id="objectFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
         <property name="targetBeanName" value="user"/>
