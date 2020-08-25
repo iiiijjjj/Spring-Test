@@ -12,6 +12,8 @@ public class SpringAnnotationContainerTest {
         context.register(SpringAnnotationContainerTest.class);
         context.refresh();
         System.out.println(context.getBean("user"));
+        System.out.println(context.getBean("user",2L,"yuly"));
+        System.out.println(context.getBean("user"));
     }
 
     @Bean

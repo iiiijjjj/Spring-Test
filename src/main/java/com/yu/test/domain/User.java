@@ -5,6 +5,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class User {
 
+    public User(){}
+
+    public User(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     private Long id;
     private String name;
 
